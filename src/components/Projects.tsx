@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { CodeIcon, ShoppingCart, Bot, Headset } from 'lucide-react';
+import React from "react";
+import { CodeIcon, ShoppingCart, Bot, Headset } from "lucide-react";
 
 interface ProjectItem {
   title: string;
@@ -12,43 +11,26 @@ interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
-    title: "LockedIn: A Virtual Reality Experience",
-    period: "Dec 2024 – Present",
-    technologies: "C#, Unity, OOPs, Blender",
+    title: "Recipal: AI Meal Planner App",
+    period: "Jun 2025 – Jul 2025",
+    technologies: "Expo, LLM, RAG, NodeJS, Supabase, Stripe, Pinecone",
     description: [
-      "Developed an immersive VR game in Unity for Meta Quest headsets, cycling through the end-to-end software engineering cycle from HLD to testing, awaiting release in the meta quest app store.",
-      "Leveraged several techniques such as low-poly assets, baked lighting, XR interactables, Shader Graphs, and MonoBehaviour Scripting (C#) to ensure a smooth and fulfilling gameplay for the user."
+      "Built a full-stack cross-platform iOS & Android app using React Native (Expo), Node.js/Express, and Supabase, featuring AI-powered meal planning and recipe browsing",
+      "Developed a personalized 'For You' page using a two-tower recommendation system to boost user engagement",
+      "Implemented secure JWT authentication with 2FA and integrated Stripe billing for premium subscriptions",
     ],
-    icon: <Headset className="text-primary" size={24} />
+    icon: <CodeIcon className="text-primary" size={24} />,
   },
   {
-    title: "TradeOptimizer: Algo Trading Bot",
-    period: "Aug 2024 – Present",
-    technologies: "PyTorch, LLM, OpenAI, LangChain, LSTM",
+    title: "MailJS MCP Server",
+    period: "May 2025 – Jun 2025",
+    technologies: "MCP, NodeJS, NPM, Open Source, GenAI",
     description: [
-      "Engineered an autonomous trading bot leveraging technical indicators, sentiment analysis, and advanced algorithms using models like FinBERT, BertTopic and LSTMs to predict market trends and execute trades automatically."
+      "Developed a plug-and-play MCP server enabling LLMs to automate temporary email account creation and message retrieval",
+      "Open-sourced and published on npm, achieving 200+ downloads in the first few weeks",
     ],
-    icon: <Bot className="text-primary" size={24} />
+    icon: <Bot className="text-primary" size={24} />,
   },
-  {
-    title: "UnMasker: UnMasking faces using Deep Learning",
-    period: "Jan 2021 – May 2021",
-    technologies: "GAN, CNN, OpenCV",
-    description: [
-      "Designed and developed a generative adversarial network (GAN) to reconstruct missing facial features by removing masks from faces on 32000+ training samples, enabling accurate facial restoration using computer vision openCV"
-    ],
-    icon: <CodeIcon className="text-primary" size={24} />
-  },
-  {
-    title: "SecureMart: Secure E-commerce Website",
-    period: "Aug 2021 – Dec 2021",
-    technologies: "React, Stripe, Node, MongoDB, Express",
-    description: [
-      "Developed a full-stack e-commerce platform with React (frontend), Node.js and Express (backend) and MongoDB (database), implementing REST API and authentication mechanisms using JSON Web Tokens, OAuth2, and SSL.",
-      "Leveraged fundamental security concepts including encryption, secure payment gateway, 2FA, ACLS etc."
-    ],
-    icon: <ShoppingCart className="text-primary" size={24} />
-  }
 ];
 
 const Projects: React.FC = () => {
@@ -59,12 +41,12 @@ const Projects: React.FC = () => {
           <h2 className="text-3xl font-bold">Projects</h2>
           <div className="h-1 w-20 bg-primary rounded-full"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="card-gradient rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl transition-shadow h-full flex flex-col"
+            <div
+              key={index}
+              className="rounded-xl p-6 shadow-medium border border-white/10 h-full flex flex-col"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
@@ -72,19 +54,28 @@ const Projects: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm">{project.period}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {project.period}
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex-grow">
                 <div className="mb-3">
-                  <span className="text-primary text-sm font-medium">Technologies: </span>
-                  <span className="text-muted-foreground text-sm">{project.technologies}</span>
+                  <span className="text-primary text-sm font-medium">
+                    Technologies:{" "}
+                  </span>
+                  <span className="text-muted-foreground text-sm">
+                    {project.technologies}
+                  </span>
                 </div>
-                
+
                 <ul className="space-y-2 text-muted-foreground">
                   {project.description.map((item, i) => (
-                    <li key={i} className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary">
+                    <li
+                      key={i}
+                      className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary"
+                    >
                       {item}
                     </li>
                   ))}

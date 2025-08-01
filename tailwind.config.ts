@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +18,15 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        soft: "0 4px 14px -2px rgba(0, 0, 0, 0.15)",
+        medium: "0 8px 24px -4px rgba(0, 0, 0, 0.2)",
+        hard: "0 12px 32px -6px rgba(0, 0, 0, 0.25)",
+      },
+      backgroundImage: {
+        "conic-gradient":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

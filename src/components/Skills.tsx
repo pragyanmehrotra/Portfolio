@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 
 interface SkillCategory {
   category: string;
@@ -9,20 +8,47 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     category: "Programming Languages",
-    skills: ["Java", "Python", "C", "C++", "Rust", "Ruby", "Go", "React", "NodeJS", "JavaScript", "SQL", "Bash", "C#"]
+    skills: [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "Rust",
+      "Go",
+      "JavaScript",
+      "SQL",
+      "R",
+      "Kotlin",
+    ],
   },
   {
-    category: "Frameworks",
-    skills: ["TensorFlow", "PyTorch", "AWS", "Azure", "Flask", "Django", "Kubernetes", "Docker", "MySQL", "DynamoDB", "CDK", "Git"]
-  },
-  {
-    category: "Courses",
-    skills: ["Deep Learning", "Distributed Systems", "DS & Algorithms", "Database Systems", "Operating Systems", "Networking"]
+    category: "Tools",
+    skills: [
+      "AWS",
+      "Kubernetes",
+      "Docker",
+      "CDK",
+      "Angular",
+      "MongoDB",
+      "N8N",
+      "VectorDB",
+      "Redis",
+      "Drizzle ORM",
+      "Tableau",
+    ],
   },
   {
     category: "Soft Skills",
-    skills: ["Problem Solving", "Fast Learner", "Growth Mindset", "Customer Obsession", "Cross-Team Collaboration"]
-  }
+    skills: [
+      "Problem Solving",
+      "Fast Learner",
+      "Growth Mindset",
+      "Curious",
+      "Cross-Team Collaboration",
+      "Agile",
+      "Communication",
+    ],
+  },
 ];
 
 const Skills: React.FC = () => {
@@ -33,22 +59,31 @@ const Skills: React.FC = () => {
           <h2 className="text-3xl font-bold">Skills</h2>
           <div className="h-1 w-20 bg-primary rounded-full"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillCategories.map((category, index) => (
-            <div 
-              key={index} 
-              className="card-gradient rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl transition-shadow"
+            <div
+              key={index}
+              className=" rounded-xl p-6 shadow-medium border border-white/10 "
             >
-              <h3 className="text-xl font-semibold mb-4">{category.category}</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                {category.category}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, i) => (
-                  <span 
-                    key={i} 
-                    className="bg-secondary/50 text-foreground py-1.5 px-3 rounded-full text-sm hover:bg-primary/30 transition-colors"
+                  <div
+                    key={i}
+                    className="relative overflow-hidden rounded-full bg-conic-gradient shadow-medium "
+                    style={{
+                      backgroundPosition: `${Math.random() * 100}% ${
+                        Math.random() * 100
+                      }%`,
+                    }}
                   >
-                    {skill}
-                  </span>
+                    <span className="relative bg-background/90 backdrop-blur-sm text-foreground py-1.5 px-3 rounded-full text-sm border border-white/10">
+                      {skill}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
