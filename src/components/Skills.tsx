@@ -25,8 +25,10 @@ const skillCategories: SkillCategory[] = [
     category: "Tools",
     skills: [
       "AWS",
+      "Azure",
       "Kubernetes",
       "Docker",
+      "Git",
       "CDK",
       "Angular",
       "MongoDB",
@@ -35,6 +37,22 @@ const skillCategories: SkillCategory[] = [
       "Redis",
       "Drizzle ORM",
       "Tableau",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Supabase",
+      "TiDB",
+      "PostgreSQL",
+      "FastAPI",
+      "Express",
+      "LangChain",
+      "LangGraph",
+      "OpenTelemetry",
+      "Prisma",
+      "Expo",
+      "Stripe",
+      "Pinecone",
+      "MCP",
     ],
   },
   {
@@ -60,11 +78,11 @@ const Skills: React.FC = () => {
           <div className="h-1 w-20 bg-primary rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className=" rounded-xl p-6 shadow-medium border border-white/10 "
+              className=" rounded-xl p-6 shadow-medium border border-white/10 h-full "
             >
               <h3 className="text-xl font-semibold mb-4">
                 {category.category}
@@ -73,7 +91,7 @@ const Skills: React.FC = () => {
                 {category.skills.map((skill, i) => (
                   <div
                     key={i}
-                    className="relative overflow-hidden rounded-full bg-conic-gradient shadow-medium "
+                    className="rounded-full bg-background/80 backdrop-blur-sm border border-white/10 shadow-medium "
                     style={{
                       backgroundPosition: `${Math.random() * 100}% ${
                         Math.random() * 100

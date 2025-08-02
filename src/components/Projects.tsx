@@ -7,6 +7,7 @@ interface ProjectItem {
   technologies: string;
   description: string[];
   icon: React.ReactNode;
+  link: string; // Added link field
 }
 
 const projects: ProjectItem[] = [
@@ -20,6 +21,7 @@ const projects: ProjectItem[] = [
       "Implemented secure JWT authentication with 2FA and integrated Stripe billing for premium subscriptions",
     ],
     icon: <CodeIcon className="text-primary" size={24} />,
+    link: "https://github.com/pragyanmehrotra/meal-planner-app",
   },
   {
     title: "MailJS MCP Server",
@@ -30,6 +32,7 @@ const projects: ProjectItem[] = [
       "Open-sourced and published on npm, achieving 200+ downloads in the first few weeks",
     ],
     icon: <Bot className="text-primary" size={24} />,
+    link: "https://www.npmjs.com/package/@pragyanm/temp-mail-mcp-server",
   },
 ];
 
@@ -44,8 +47,10 @@ const Projects: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div
-              key={index}
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl p-6 shadow-medium border border-white/10 h-full flex flex-col"
             >
               <div className="flex items-start gap-4 mb-4">
@@ -68,7 +73,6 @@ const Projects: React.FC = () => {
                   <span className="text-muted-foreground text-sm">
                     {project.technologies}
                   </span>
-                </div>
 
                 <ul className="space-y-2 text-muted-foreground">
                   {project.description.map((item, i) => (
@@ -81,7 +85,8 @@ const Projects: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>
