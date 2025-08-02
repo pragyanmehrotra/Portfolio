@@ -6,8 +6,8 @@ interface ProjectItem {
   period: string;
   technologies: string;
   description: string[];
-  icon: React.ReactNode;
-  link: string; // Added link field
+  icon: React.ReactElement<{ className?: string }>;
+  link: string;
 }
 
 const projects: ProjectItem[] = [
@@ -51,15 +51,17 @@ const Projects: React.FC = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl p-6 shadow-medium border border-white/10 h-full flex flex-col"
+              className="rounded-xl p-6 shadow-medium border border-white/10 h-full flex flex-col hover:border-primary/50 hover:shadow-lg transition-all duration-300 group"
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  {project.icon}
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors">
+                  {React.cloneElement(project.icon, {
+                    className: `${project.icon.props.className} group-hover:scale-110 transition-transform`
+                  })}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm group-hover:text-primary/80 transition-colors">
                     {project.period}
                   </p>
                 </div>

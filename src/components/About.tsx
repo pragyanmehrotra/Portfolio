@@ -10,14 +10,12 @@ const About: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-6">
-            <p className="text-muted-foreground leading-relaxed">I'm a Software Development Engineer with 2+ years of experience at Amazon and Microsoft, specializing in cloud technologies, distributed systems, and software engineering. I am passionate about building scalable and efficient solutions that solve real-world problems.</p>
+            <p className="text-muted-foreground leading-relaxed">I'm a Software Development Engineer and AI Engineer with 2+ years of experience at Amazon and Microsoft, specializing in cloud technologies, distributed systems, and AI/ML solutions. I'm passionate about building scalable systems that integrate machine learning innovations to solve complex challenges.</p>
             <p className="text-muted-foreground leading-relaxed">
-              Currently pursuing a Master's degree in Computer Science at the University of Wisconsin-Madison, I bring 
-              strong professional experience from my time at Amazon where I developed customer-facing features for AWS Lambda 
-              and improved system performance.
+              Currently pursuing a Master's degree in Computer Science at the University of Wisconsin-Madison, I bring professional experience from Amazon where I developed customer-facing features for AWS Lambda, improved system performance, and contributed to AI/ML infrastructure projects.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I enjoy working on challenging problems that require innovative thinking and creative solutions.
+              I enjoy solving challenging problems at the intersection of software engineering and artificial intelligence, creating solutions that combine robust system design with innovative machine learning techniques.
             </p>
           </div>
           

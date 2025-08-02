@@ -16,12 +16,10 @@ const Hero: React.FC = () => {
           <span className="text-gradient">Pragyan Mehrotra</span>
         </h1>
         <h2 className="text-xl md:text-2xl text-muted-foreground">
-          Software Development Engineer
+          Software Development Engineer & AI Engineer
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Building scalable solutions for complex problems with expertise in
-          cloud computing, distributed systems, software engineering, and
-          full-stack development.
+          Building scalable solutions for complex problems with expertise in cloud computing, distributed systems, software engineering, full-stack development, and AI/ML integration.
         </p>
         <div className="flex space-x-4 justify-center pt-4">
           <a

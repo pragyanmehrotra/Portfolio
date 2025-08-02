@@ -4,3 +4,7 @@
   padding: 3rem;
   text-align: center;
 }
+
+.section-padding {
+  padding: 4rem 6rem; /* Reduced horizontal padding to 6rem from 8rem */
+}
